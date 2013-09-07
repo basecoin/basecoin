@@ -1,0 +1,9 @@
+Building Basecoin
+
+See doc/readme-qt.rst for instructions on building Basecoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Basecoin.
+
+See doc/build-*.txt for instructions on building Basecoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Basecoin.
