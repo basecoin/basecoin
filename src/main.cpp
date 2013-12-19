@@ -1445,7 +1445,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     // Check it again in case a previous version let a bad block in
     if (!CheckBlock(!fJustCheck, !fJustCheck))
     {
-        printf("CheckBlock failed: return fasle\n");
+        //printf("CheckBlock failed: return fasle\n");
         return false;
     }
 
@@ -1488,7 +1488,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
                 BOOST_FOREACH(CDiskTxPos &pos, txindexOld.vSpent)
                     if (pos.IsNull())
                 {
-                    printf("pos.IsNull() failed: return fasle\n");
+                    //printf("pos.IsNull() failed: return fasle\n");
                         return false;
                 }
             }
@@ -1510,7 +1510,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
             bool fInvalid;
             if (!tx.FetchInputs(txdb, mapQueuedChanges, true, false, mapInputs, fInvalid))
             {
-                printf("tx.FetchInputs failed: return fasle\n");
+                //printf("tx.FetchInputs failed: return fasle\n");
                 return false;
             }
 
@@ -1533,7 +1533,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 
             if (!tx.ConnectInputs(txdb, mapInputs, mapQueuedChanges, posThisTx, pindex, true, false, fStrictPayToScriptHash))
             {
-                printf("tx.ConnectInputs failed: return fasle\n");
+                //printf("tx.ConnectInputs failed: return fasle\n");
                 return false;
             }
         }
@@ -1571,7 +1571,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 
     if (vtx[0].GetValueOut() > GetProofOfWorkReward(pindex->nHeight, nFees, prevHash) && pindex->nHeight != 1)
     {
-        printf("vtx[0].GetValueOut()= > GetProofOfWorkReward(pindex->nHeight, nFees, prevHash)\n");
+        //printf("vtx[0].GetValueOut()= > GetProofOfWorkReward(pindex->nHeight, nFees, prevHash)\n");
 		return false;
     }
 
@@ -1699,7 +1699,7 @@ bool CBlock::SetBestChainInner(CTxDB& txdb, CBlockIndex *pindexNew)
     {
         txdb.TxnAbort();
         InvalidChainFound(pindexNew);
-        printf("InvalidChainFound: return fasle\n");
+        //printf("InvalidChainFound: return fasle\n");
         return false;
     }
     if (!txdb.TxnCommit())

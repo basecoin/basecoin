@@ -20,3 +20,7 @@ Basecoin provides annual interest rate of 0.01%, for stakes that are not moved.
  
 
 The official website is under construction.
+Basecoin website from Chinese: http://www.basecoin.pw/
+
+Verion 1.1.1 update:
+- add newest checkpoints
